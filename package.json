@@ -1,0 +1,28 @@
+{
+  "name": "YLT-wp-base",
+  "version": "0.4.0",
+  "description": "YLT Wordpress base template",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.0",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exorcise": "^2.1.1",
+    "grunt-phplint": "^0.1.0",
+    "grunt-sass": "^2.0.0",
+    "uglifyify": "^4.0.3"
+  },
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

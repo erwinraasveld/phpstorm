@@ -1,0 +1,41 @@
+node_modules/
+.sass-cache
+grunt/
+desktop.ini
+*/desktop.ini
+config.php
+
+
+# Ignore everything in httpdocs except wp-content
+httpdocs/*
+!httpdocs/wp-content/
+
+# Only include themes
+httpdocs/wp-content/*
+!httpdocs/wp-content/themes/
+httpdocs/wp-content/themes/index.php
+
+# Exclude plugins
+!httpdocs/wp-content/plugins/
+httpdocs/wp-content/plugins/*
+
+# Exclude generated files
+httpdocs/wp-content/themes/**/assets/css/style.min.css
+httpdocs/wp-content/themes/**/assets/css/style.min.css.map
+httpdocs/wp-content/themes/**/assets/js/script.min.js
+httpdocs/wp-content/themes/**/assets/js/script.min.js.map
+
+# Includes uploads htaccess
+!httpdocs/wp-content/uploads
+httpdocs/wp-content/uploads/*
+!httpdocs/wp-content/uploads/.htaccess
+
+# Include .htaccess and wp-config
+!httpdocs/.htaccess
+!httpdocs/wp-config.php
+!httpdocs/wp-content/.htaccess
+
+# PhpStorm exclude .idea folder
+.idea
+/wp-base.iml
+
