@@ -13,6 +13,7 @@ ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
 
 /** Define mostly used function returns to tweak performance. Use these constants inside your theme **/
 define('TEMPLATE_URL',get_template_directory_uri());
+define('TEMPLATE_DIR',get_template_directory());
 define('HOME_URL'    ,get_home_url());
 define('SITE_NAME'   ,get_bloginfo('name'));
 
@@ -58,22 +59,30 @@ include_once 'includes/inc_menus.php';
 //include_once 'includes/inc_options.php';
 
 /** Image sizes **/
-//include_once 'includes/inc_image_sizes.php';
+include_once 'includes/inc_image_sizes.php';
 
 /** Custom post types **/
-//include_once 'includes/inc_post_types.php';
+include_once 'includes/inc_post_types.php';
 
 /** Custom fields **/
-//include_once 'includes/inc_custom_fields.php';
+include_once 'includes/inc_custom_fields.php';
 
 /** Custom meta boxes **/
-//include_once 'includes/inc_cmb2.php';
+include_once 'includes/inc_cmb2.php';
 
 /** Editor styles **/
 //include_once 'includes/inc_editor_styles.php';
 
 /** Sidebars **/
-//include_once 'includes/inc_sidebars.php';
+include_once 'includes/inc_sidebars.php';
 
 /** Add scripts **/
 include_once 'includes/inc_assets.php';
+
+/** Add visual composer elements **/
+include_once 'includes/inc_vc_elements.php';
+
+function simiestyle(){
+	wp_enqueue_style('admincss',TEMPLATE_URL.'/assets/css/admin.min.css');
+}
+add_action('admin_enqueue_scripts','simiestyle');

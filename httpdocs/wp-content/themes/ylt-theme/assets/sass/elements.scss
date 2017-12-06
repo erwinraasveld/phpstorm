@@ -1,0 +1,110 @@
+.knop,.vc_general.vc_btn3{
+  border-radius: 30px;
+  display: inline-block;
+  padding: 15px 30px;
+  font-family: "bree",sans-serif;
+  font-size: 18px !important;
+  &.groot{
+    padding: 18px 30px;
+  }
+  &.oranje{
+    background-color: $oranje;
+    color: white;
+  }
+  &.blauw-stip{
+    color: $blauw;
+    background: transparent;
+    border: 1px dashed $blauw;
+  }
+  &.blauw{
+    background-color: $blauw;
+    color: white;
+  }
+}
+
+
+
+form.nieuwsbrief{
+  @include flexbox;
+  width: 100%;
+  input{
+    width: calc(100% - 160px);
+    border: 1px solid $blauw;
+    padding: 12px 20px;
+    border-radius: 30px 0 0 30px;
+  }
+  button{
+    width: 160px;
+    background: $blauw;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 0 30px 30px 0;
+    font-family: "bree", sans-serif;
+  }
+}
+
+
+.titel-rondje{
+  position: relative;
+    &:after{
+      content: url("../img/rondje.svg");
+	  position: absolute;
+      top: -35px;
+      transform: translateX(50%);
+  }
+}
+
+li.menu-item.oranje{
+  a{
+    color: $oranje;
+  }
+}
+
+#accessoire-grid{
+
+  .vc_grid-filter{
+    .vc_grid-filter-item{
+      padding: 9px 20px;
+      border: 1px solid $blauw;
+      span{
+        color: $blauw;
+        font-family: $headings-font-family;
+      }
+      &.vc_active{
+        background: $blauw;
+        span{
+          color: white;
+        }
+      }
+    }
+  }
+
+  .accessoire{
+    .afbeelding{
+
+    }
+    .titel{
+      h3{
+        color: $blauw;
+        font-size: 26px;
+        font-weight: normal;
+      }
+    }
+    .ondertitel{
+
+    }
+    .prijs{
+      color: $blauw;
+      margin-top: 20px;
+    }
+  }
+}
+
+.artikel-alv{
+  margin-right: 50px;
+}
+
+
+@import "elements/visual-composer";
+

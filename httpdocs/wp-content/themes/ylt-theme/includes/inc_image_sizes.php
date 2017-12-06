@@ -21,8 +21,7 @@
 //add_image_size( 'small', 175, 175, false );
 
 
-
-
+add_image_size( 'header-banner', 1800, 800, array('x_crop_position' => 'center','y_crop_position' => 'center') );
 
 /* ---------------------------------------- *\
  * Change image size names

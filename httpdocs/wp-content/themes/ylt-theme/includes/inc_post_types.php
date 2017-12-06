@@ -1,3 +1,3 @@
 <?php
 /** Custom post types **/
-include_once 'post-types/products.php';
+include_once 'post-types/accessoires.php';

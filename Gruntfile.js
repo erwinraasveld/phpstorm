@@ -37,7 +37,9 @@ module.exports = function(grunt)
                 },
                 files:
                 {
-                    '<%= config.theme_dir %>/assets/css/style.min.css': '<%= config.theme_dir %>/assets/sass/main.scss'
+                    '<%= config.theme_dir %>/assets/css/style.min.css': '<%= config.theme_dir %>/assets/sass/main.scss',
+                    '<%= config.theme_dir %>/assets/css/admin.min.css': '<%= config.theme_dir %>/assets/sass/admin.scss'
+
                 }
             }
         },
@@ -171,7 +173,8 @@ module.exports = function(grunt)
 
 
 	// Define your tasks here
-	grunt.registerTask('default', ['sass', 'jshint', 'browserify', 'exorcise', 'phplint', ]);
+	//grunt.registerTask('default', ['sass', 'jshint', 'browserify', 'exorcise', 'phplint', ]);
+	grunt.registerTask('default', ['sass', 'jshint', 'browserify', 'exorcise', ]);
 
 
 

@@ -1,0 +1,51 @@
+footer {
+  > section {
+    margin: 50px 0;
+  }
+  section.cta {
+    background: $blauw;
+    padding: 10px 0;
+  }
+  section.widget {
+    .widgettitle {
+      margin: 0 0 25px;
+    }
+    .menus {
+      @include flexbox;
+      justify-content: space-between;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        > li {
+          margin-bottom: 10px;
+          &.current-menu-item{
+            a{
+              color: $blauw;
+            }
+          }
+          a {
+            color: $text-color;
+          }
+        }
+      }
+    }
+    .nieuwsbrief {
+      .widgettitle {
+        color: $blauw;
+      }
+    }
+  }
+
+  section.sep {
+    .line {
+      border-top: 1px solid #e7f3f5;
+    }
+  }
+
+  section.copyright {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

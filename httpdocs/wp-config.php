@@ -108,7 +108,7 @@ $table_prefix  = 'ylt_wp_';
 
 if ( ENVIRONMENT == 'DEVELOPMENT' || $_SERVER['REMOTE_ADDR'] == YLT_IP )
 {
-	define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG', true );
 	//define( 'WP_DEBUG', true );
 }
 else

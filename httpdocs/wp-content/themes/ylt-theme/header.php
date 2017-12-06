@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
+    <link rel="stylesheet" href="https://use.typekit.net/fzh4emn.css">
     <link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/assets/css/style.min.css" />
 
     <?php wp_head(); ?>
@@ -15,37 +16,32 @@
 
 <body <?php body_class(); ?>>
 
-
-
-
-
 <nav class="container">
 
 
     <nav class="row">
+
         <div class="col-xs-12">
-            <?php
+            <div class="logo">
+                <?php
+                printf('<a href="%s">%s</a>',HOME_URL,file_get_contents(TEMPLATE_DIR.'/assets/img/logo.svg'));
+                ?>
+            </div>
+            <div class="hoofdmenu">
+	            <?php
+	            $args = array
+	            (
+		            'theme_location'        => 'main-menu',
+		            'container'             => false,
+	            );
 
-            $args = array
-            (
-                'theme_location'        => 'main-menu',
-                'container'             => false,
-            );
+	            wp_nav_menu($args);
 
-            wp_nav_menu($args);
-
-            ?>
-        </div><!-- .col-xs-12 -->
-    </nav><!-- .row -->
-
-
-    <?php if(function_exists('bcn_display')): ?>
-    <nav class="row breadcrumbs">
-        <div class="col-xs-12" xmlns:v="http://rdf.data-vocabulary.org/#">
-            <?php bcn_display(); ?>
-        </div><!-- .col-xs-12 -->
-    </nav><!-- .row -->
-    <?php endif; ?>
+	            ?>
+            </div>
+        </div>
+    </nav>
+</nav>
 
 
-</nav><!-- .container -->
+<?php include_once 'templates/header-banner.php'; ?>

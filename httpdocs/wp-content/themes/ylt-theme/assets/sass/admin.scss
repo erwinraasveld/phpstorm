@@ -1,0 +1,57 @@
+$blauw: #5DB1BF;
+$blauwl: rgba($blauw, .15);
+$oranje: #E7570F;
+
+.vc_general.vc_btn3{
+  border-radius: 30px;
+  display:       inline-block;
+  padding:       15px 30px;
+  font-family:   "bree", sans-serif;
+  font-size:     18px !important;
+  &.vc_btn3-color-oranje{
+	background-color: $oranje;
+	color:            white;
+  }
+  &.vc_btn3-color-blauw-stip{
+	color:      $blauw;
+	background: transparent;
+	border:     1px dashed $blauw;
+  }
+  &.vc_btn3-color-blauw{
+	background-color: $blauw;
+	color:            white;
+  }
+
+}
+
+.vc_shortcode-param[data-param_type=dropdown] select.wpb_vc_param_value, .vc_shortcode-param[data-param_type=dropdown] select.wpb_vc_param_value{
+  &.oranje{
+	background: $oranje;
+	color: white;
+  }
+  &.blauw{
+	background: $blauw;
+	color: white;
+  }
+  &.blauw-stip{
+	background: white;
+	color: $blauw;
+	border: 1px dashed $blauw;
+  }
+  option{
+	&[class='oranje']{
+	  background: $oranje;
+	  color: white;
+	}
+	&[class='blauw']{
+	  background: $blauw;
+	  color: white;
+	}
+	&[class='blauw-stip']{
+	  background: white;
+	  color: $blauw;
+	  border: 1px dashed $blauw;
+	}
+  }
+
+}

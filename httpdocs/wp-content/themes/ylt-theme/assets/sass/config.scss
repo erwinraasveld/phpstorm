@@ -1,2 +1,99 @@
-$groen: #5db1bf;
+$blauw: #5db1bf;
+$blauwl: rgba($blauw,.15);
 $oranje: #e7570f;
+
+@mixin flexbox{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+h1{
+  font-size: 60px;
+}
+h2{
+  font-size: 48px;
+}
+h3{
+  font-size:24px;
+}
+h4{
+  font-size: 20px;
+}
+
+b,strong{
+  font-family: $headings-font-family;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.schuin{
+  span{
+    font-family: "ff-market-web",sans-serif;
+    font-size: 24px;
+    position: relative;
+  }
+
+  &.pijl{
+    span:before{
+      position: absolute;
+      left: 20px;
+
+      bottom: calc(100% + 20px) ;
+      width: 42px;
+      height: 49px;
+      background: url(../img/pijl.svg);
+      background-size: cover;
+      content: '';
+      z-index: 1;
+    }
+    &.pijl-onder{
+      span:before{
+
+        bottom: inherit;
+        top: calc(100% + 20px);
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg) rotateY(180deg);
+      }
+    }
+  }
+
+}
+
+.kruimelpad{
+margin-bottom: 30px;
+  .knop.terug{
+    color: $blauw;
+    border: 1px solid $blauw;
+    margin-right: 30px;
+    &:before{
+      content: url(../img/anchor.svg);
+      display: inline-block;
+      width: 7px;
+      margin-right: 10px;
+      height: 12px;
+    }
+  }
+  span a{
+    opacity: 0.5;
+    color: #777;
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  i.stipstap-anchor{
+    position: relative;
+    margin: 0 20px;
+    opacity: 0.5;
+    &:before{
+      height: 12px;
+      content: url(../img/stipstap-anchor.svg);
+      display: inline-block;
+      width: 7px;
+    }
+  }
+}

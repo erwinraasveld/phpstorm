@@ -1,0 +1,166 @@
+// veelgeselde vragen
+.vc_toggle{
+  overflow:      hidden;
+  border-radius: 25px;
+  border:        1px solid $blauw;
+  .vc_toggle_title{
+	transition: background .3s ease-in;
+	padding:    12px 15px !important;
+	h4{
+	  font-family: $font-family-base;
+	  font-size:   18px;
+	}
+	i.vc_toggle_icon{
+	  font-style: normal;
+	  border:     none;
+	  background: none;
+	  left:       inherit !important;
+	  right:      20px;
+	  &:before{
+		content:     "\f067";
+		font-family: FontAwesome;
+		width:       10px; height: 10px;
+		font-size:   11px;
+		border:      none;
+		background:  none;
+		color:       $blauw;
+	  }
+	  &:after{
+		display: none;
+	  }
+	}
+
+  }
+  &.vc_toggle_active{
+	.vc_toggle_title{
+	  background: $blauwl;
+	  i.vc_toggle_icon{
+		&:before{
+		  content:    "\f068";
+		  visibility: visible;
+		}
+	  }
+	}
+
+  }
+  &:not(:last-of-type){
+	margin-bottom: 10px;
+  }
+}
+
+div#stipstap-flex-row .vc_column-inner > .wpb_wrapper{
+  display:   flex;
+  width:     100%;
+  flex-wrap: wrap;
+  .wpb_content_element:not(:last-child){
+	margin-right: 30px;
+  }
+}
+
+div#stipstap-footer .vc_column-inner{
+  padding: 0 15px;
+  > .wpb_wrapper{
+	display:         flex;
+	width:           100%;
+	flex-wrap:       wrap;
+	justify-content: center;
+	align-items:     center;
+	min-height:      100px;
+	h3{
+	  margin: 0;
+	  color:  white;
+	}
+	.wpb_content_element{
+	 	padding: 15px ;
+
+	}
+  }
+}
+
+
+#tekening-foto{
+  .vc_tta-tabs-list{
+	display: inline-block;
+	background: $blauw;
+	padding: 5px;
+	border-radius: 25px;
+
+	.vc_tta-tab{
+	  &.vc_active{
+		a{
+
+		  background: white;
+		  color: $blauw;
+		}
+	  }
+	  a{
+		font-size: 18px;
+		font-family: $headings-font-family;
+		border: none;
+		color: white;
+		border-radius: 25px;
+		padding: 9px 21px;
+		background: none;
+	  }
+
+
+	}
+
+  }
+}
+
+
+#meer-details{
+  #tabbladen{
+	.vc_tta-tab{
+	  a{
+		border: none;
+		padding: 0 0 5px;
+		border-bottom: 4px solid transparent;
+		background: none;
+		span{
+		  font-size: 26px;
+		  color: $blauwl;
+		  font-weight: 100;
+		  font-family: $headings-font-family;
+		}
+		&:hover{
+		  background: none;
+		  border-color: $blauwl;
+		}
+	  }
+
+	  &.vc_active{
+		a{
+		  border-color: $blauw;
+		  span{
+			color: $blauw;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+
+#tabel-blauw-wit{
+  table{
+	tr{
+	  &:nth-child(odd){
+		background: $blauwl;
+	  }
+	  td{
+		padding: 7px 30px;
+	  }
+	}
+  }
+}
+
+
+.media-datum{
+  span{
+	background: white;
+	border-radius: 25px;
+	padding:8px 18px;
+  }
+}

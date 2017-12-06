@@ -150,5 +150,6 @@ if ( ! function_exists( '\Cmb2Grid\init' ) ) {
 			Cmb2GridPlugin::getInstance();
 		}
 	}
+	init();
 }
 
