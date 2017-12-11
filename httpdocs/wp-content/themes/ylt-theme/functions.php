@@ -86,3 +86,31 @@ function simiestyle(){
 	wp_enqueue_style('admincss',TEMPLATE_URL.'/assets/css/admin.min.css');
 }
 add_action('admin_enqueue_scripts','simiestyle');
+
+
+add_shortcode('veld', 'shortcode_field');
+function shortcode_field($atts){
+    extract(shortcode_atts(array(
+        'meta' => NULL,
+        'post_id' => NULL,
+        'before' => NULL,
+        'after' => NULL
+    ), $atts));
+    if($meta === NULL) return;
+    $field = esc_attr($meta);
+    global $post;
+    $post_id = (NULL === $post_id) ? $post->ID : $post_id;
+
+    $output = '';
+
+    if($before != NULL){
+        $output .= $before;
+    }
+
+    $output .= get_post_meta($post_id, $field, true);
+
+    if($after != NULL){
+        $output .= $after;
+    }
+    return $output;
+}

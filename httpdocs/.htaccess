@@ -10,6 +10,7 @@ RewriteCond %{REMOTE_ADDR} !^::1$
 
 # YLT
 RewriteCond %{REMOTE_ADDR} !^213\.125\.227\.218$
+RewriteCond %{REMOTE_ADDR} !^86\.91\.231\.4$
 
 RewriteRule ^(.*)$ - [R=403,L]
 </IfModule>

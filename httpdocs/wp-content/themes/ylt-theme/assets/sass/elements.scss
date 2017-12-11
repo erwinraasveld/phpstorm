@@ -106,5 +106,12 @@ li.menu-item.oranje{
 }
 
 
+html body #powerTip {
+  background-color: $oranje;
+  &.n:before{
+    border-top-color: $oranje;
+  }
+}
+
 @import "elements/visual-composer";
 

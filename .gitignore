@@ -22,6 +22,8 @@ httpdocs/wp-content/plugins/*
 # Exclude generated files
 httpdocs/wp-content/themes/**/assets/css/style.min.css
 httpdocs/wp-content/themes/**/assets/css/style.min.css.map
+httpdocs/wp-content/themes/**/assets/css/admin.min.css
+httpdocs/wp-content/themes/**/assets/css/admin.min.css.map
 httpdocs/wp-content/themes/**/assets/js/script.min.js
 httpdocs/wp-content/themes/**/assets/js/script.min.js.map
 
