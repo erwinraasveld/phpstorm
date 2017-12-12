@@ -36,7 +36,18 @@ b,strong{
     font-size: 24px;
     position: relative;
   }
-
+  &.oranje-checks{
+    color: $oranje;
+    ul{
+      list-style: url("../img/oranje-check.svg");
+      padding-left: 30px;
+      li{
+        font-family: "ff-market-web",sans-serif;
+        font-size: 24px;
+        position: relative;
+      }
+    }
+  }
   &.pijl{
     span:before{
       position: absolute;

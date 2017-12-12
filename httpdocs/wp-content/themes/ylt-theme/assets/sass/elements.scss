@@ -101,6 +101,137 @@ li.menu-item.oranje{
   }
 }
 
+
+#bestellen-grid{
+
+
+  .bestellen{
+    .afbeelding{
+
+    }
+    .titel{
+      p{
+        margin-bottom: 0;
+      }
+    }
+    .ondertitel{
+
+    }
+    .prijs{
+      color: $blauw;
+      margin-top: 10px;
+    }
+
+    .accessoire-aantal{
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 10px;
+      right: 10px;
+
+
+      .control{
+        width: 30px;
+        height: 30px;
+        position: relative;
+
+
+        &:before,&:after{
+          transition:opacity 0.3s ease-in;
+        }
+
+
+        &:before{
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 1;
+        }
+        &:after{
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+        }
+        &:hover{
+          &:before{
+            opacity: 0;
+          }
+          &:after{
+            opacity: 1;
+          }
+        }
+        cursor:pointer;
+      }
+
+
+      .aantal-veld{
+        input{
+          transition:all 0.3s ease-in;
+          width: 80px;
+          text-align: center;
+          border: 1px solid $blauwl;
+          border-radius: 30px;
+          height: 30px;
+          &:focus{
+            outline: none;
+            border-color: $blauw;
+          }
+          &:hover{
+            border-color: $blauw;
+          }
+        }
+
+        input.nul{
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+
+      }
+
+
+
+
+
+      .min{
+        transition:all 0.3s ease-in;
+        &:before{
+          content:url(../img/min.png);
+        }
+        &:after{
+          content:url(../img/min-active.png);
+        }
+        &.nul{
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+
+      .plus{
+        &:before{
+          content:url(../img/plus.png);
+        }
+        &:after{
+          content:url(../img/plus-active.png);
+        }
+      }
+
+    }
+
+  }
+}
+
 .artikel-alv{
   margin-right: 50px;
 }
