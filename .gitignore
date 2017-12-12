@@ -41,3 +41,5 @@ httpdocs/wp-content/uploads/*
 .idea
 /wp-base.iml
 
+cgi-bin/
+package-lock.json
