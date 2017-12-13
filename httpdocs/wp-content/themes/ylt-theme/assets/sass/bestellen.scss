@@ -1,0 +1,78 @@
+.verborgen{
+  .bestel-form{
+	.inhoud{
+	  //display: none;
+	}
+  }
+}
+
+.container{
+  > .lader{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	z-index: 1;
+  }
+  &.laden{
+	position: relative;
+  }
+}
+
+
+button[type="submit"].knop{
+  background: black;
+}
+
+.uw-gegevens-container{
+  input{
+	width: 100%;
+	border-radius: 30px;
+	padding: 0 20px;
+	position: relative;
+	height: 50px;
+	border: 1px solid transparent;
+	&:focus{
+	  outline: none;
+	  + .floating-label{
+		color: $blauw;
+	  }
+	}
+
+	&.wpcf7-not-valid{
+	  border-color: $oranje;
+	}
+  }
+  .wpcf7-form-control-wrap{
+	display: block;
+	&:not(:last-child){
+	  margin-bottom: 15px;
+	}
+	& + br{
+	  display: none;
+	}
+	span.wpcf7-not-valid-tip{
+	  display: none;
+	}
+  }
+  .floating-label {
+	transition:color 0.3s ease-in;
+	display: none;
+	position: absolute;
+	top: 3px;
+	z-index: 9;
+	left: 20px;
+	font-size: 14px;
+  }
+}
+
+.wpcf7 div.wpcf7-response-output{
+  border-width: 1px;
+  background: white;
+  padding: 14px 20px;
+  border-radius: 50px;
+  text-align: center;
+  margin: 30px 0;
+}
