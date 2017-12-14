@@ -1,31 +1,37 @@
+
+(function ($)
+{
+
+
 "use strict";
 
 
-jQuery(function () {
+$(function () {
 
-    var bestel_pagina = jQuery('body.page-id-40');
+
+
+    var bestel_pagina = $('body.page-id-40');
     if (bestel_pagina.length > 0) {
-        var container = jQuery('.header-banner + .container', bestel_pagina);
-        var lader = jQuery('<div>').addClass('lader');
+        var container = $('.header-banner + .container', bestel_pagina);
+        var lader = $('<div>').addClass('lader');
         container.addClass('laden');
         container.append(lader);
 
 
-        var knop = jQuery('button[type="submit"].knop');
-        //var formulier = jQuery('.wpcf7 form');
+        var knop = $('button[type="submit"].knop');
 
         knop.on('click', function () {
 
-            var aantal_veld = jQuery('.aantal-veld input');
+            var aantal_veld = $('.aantal-veld input');
 
             var bestellijst = {};
             aantal_veld.each(function () {
-                var id = jQuery(this).data(id);
-                var aantal = jQuery(this).val();
+                var id = $(this).data(id);
+                var aantal = $(this).val();
 
                 if(aantal > 0){
-                    bestellijst[id] = jQuery(this).data();
-                    jQuery(this).data('aantal',aantal);
+                    bestellijst[id] = $(this).data();
+                    $(this).data('aantal',aantal);
                 }
                 else{
                     delete bestellijst[id];
@@ -34,26 +40,59 @@ jQuery(function () {
 
             });
 
-            console.log(bestellijst);
-            //formulier.submit();
+            if(!$.isEmptyObject(bestellijst)){
+                var subtotaal = 0;
+                var html = "<table><tr><th>Accessoire</th><th>Prijs</th><th>Aantal</th><th>Totaal</th><th>Subtotaal</th></tr>";
+
+                $.each(bestellijst,function (id,data) {
+                    var titel = data.titel;
+                    if(data.ondertitel){
+                        titel = data.titel + ": " + data.ondertitel;
+                    }
+                    var permalink = data.permalink;
+
+                    var accessoirelink = "<a href='"+permalink+"' target='_blank'>"+titel+"</a>";
+
+                    var totaalprijs = parseFloat(data.prijs.replace(",",".")) * Number(data.aantal);
+                    var totaalprijsMetComma = totaalprijs.toString().replace(".",",");
+
+                    html += "<tr><td>"+accessoirelink+"</td><td>"+data.prijs+"</td><td>"+data.aantal+"</td><td>€"+totaalprijsMetComma+"</td><td></td></tr>";
+                    subtotaal += totaalprijs;
+                });
+
+
+                html += "<tr><td></td><td></td><td></td><td></td><td><b>&euro;"+subtotaal+"</b></td></tr></table>";
+                html += "<style type=\"text/css\">\n" +
+                    "table  {border-collapse:collapse;border-spacing:0;}\n" +
+                    "table td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}\n" +
+                    "table th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}\n" +
+                    "table td{vertical-align:top}\n" +
+                    "</style>";
+
+                $('#bestellijst').val(html);
+
+            }
+
+            //$('.wpcf7 form').submit();
+
         });
 
     }
 
 
-    jQuery(document).ajaxComplete(function () {
+    $(document).ajaxComplete(function () {
         if (lader.length > 0) {
             lader.remove();
             container.removeClass('laden');
         }
 
-        var bestellen_grid = jQuery('#bestellen-grid');
+        var bestellen_grid = $('#bestellen-grid');
         if (bestellen_grid.length > 0) {
-            var accessoire = jQuery('.bestellen', bestellen_grid);
+            var accessoire = $('.bestellen', bestellen_grid);
             accessoire.each(function () {
-                var min = jQuery(this).find('.min');
-                var plus = jQuery(this).find('.plus');
-                var aantal_veld = jQuery(this).find('.aantal-veld input');
+                var min = $(this).find('.min');
+                var plus = $(this).find('.plus');
+                var aantal_veld = $(this).find('.aantal-veld input');
 
                 min.on('click', function () {
                     if (aantal_veld.val() > 0) {
@@ -66,7 +105,7 @@ jQuery(function () {
 
                 min.addClass('nul');
                 aantal_veld.addClass('nul');
-                jQuery(this).on('click', function () {
+                $(this).on('click', function () {
                     if (aantal_veld.val() <= 0) {
                         min.addClass('nul');
                         aantal_veld.addClass('nul');
@@ -82,7 +121,7 @@ jQuery(function () {
         }
     });
 
-    jQuery(document).ready(function ($) {
+    $(document).ready(function () {
         $(document).on('focus', 'input[type=text], input[type=email],  input[type=tel],  input[type=number]', function () {
             var ph = $(this).attr('placeholder');
             if (ph) {
@@ -110,3 +149,5 @@ jQuery(function () {
 
 });
 
+
+})(jQuery);

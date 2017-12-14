@@ -68,6 +68,27 @@ button[type="submit"].knop{
   }
 }
 
+.ja-ik-wil{
+  margin: 0 -15px;
+  span.wpcf7-list-item{
+	width: 50%;
+	padding: 0 15px;
+	margin: 0;
+
+	input{
+	  width: 30px;
+	  height: 30px;
+	  margin: 0;
+	  vertical-align: middle;
+	  + span{
+		font-weight: normal;
+		vertical-align: middle;
+	  }
+	}
+
+  }
+}
+
 .wpcf7 div.wpcf7-response-output{
   border-width: 1px;
   background: white;
