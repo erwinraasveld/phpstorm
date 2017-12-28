@@ -80,10 +80,54 @@ button[type="submit"].knop{
 	  height: 30px;
 	  margin: 0;
 	  vertical-align: middle;
+	  display: none;
 	  + span{
+		cursor: pointer;
 		font-weight: normal;
 		vertical-align: middle;
+		display: block;
+		position: relative;
+		&:before{
+		  content: '';
+		  width: 30px;
+		  margin-right: 10px;
+		  height: 30px;
+		  display: inline-block;
+		  vertical-align: middle;
+		  background: white;
+		  border: 1px solid $blauw;
+		  border-radius: 30px;
+		  position: relative;
+		  top: -2px;
+		}
+		&:after{
+		  transition:transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+		  content: '';
+		  position: absolute;
+		  left: 15px;
+		  top:calc(50% - 2px);
+		  width: 14px;
+		  height: 14px;
+		  display: block;
+		  transform: translateY(-50%) translateX(-50%) scale(0);
+		  border-radius: 30px;
+		  background: white;
+		}
 	  }
+
+	  &:checked{
+		+ span{
+			&:after{
+			  background: $blauw;
+			  transform: translateY(-50%) translateX(-50%) scale(1);
+			}
+		}
+	  }
+
+
+
+
+
 	}
 
   }

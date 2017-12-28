@@ -7,6 +7,8 @@
 
 //@import 'vendor/font-awesome/font-awesome';
 
+@import 'mixins';
+
 @import 'config';
 
 @import 'wp-core';
@@ -22,3 +24,9 @@
 @import 'footer';
 
 @import 'elements';
+
+@import 'vendor/slidebars/slidebars';
+
+@import 'responsive';
+
+

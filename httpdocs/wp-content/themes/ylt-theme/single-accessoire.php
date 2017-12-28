@@ -11,7 +11,7 @@
 
     <div class="container">
 		<div class="kruimelpad">
-			<a href=".." class="knop terug">Alle accessoires</a>
+			<a href=".." class="knop terug">Alle losse elementen</a>
 		<?php bcn_display()  ?>
 		</div>
 	    <?php the_content(); ?>

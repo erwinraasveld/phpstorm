@@ -4,21 +4,59 @@
   padding: 15px 30px;
   font-family: "bree",sans-serif;
   font-size: 18px !important;
+  @include transition(all 0.5s ease-in-out);
+  &.klein{
+    padding: 10px 15px;
+  }
   &.groot{
     padding: 18px 30px;
   }
   &.oranje{
+    border:2px solid $oranje;
     background-color: $oranje;
     color: white;
+    @include transition(all 0.5s ease-in-out);
+    &:hover {
+      border:2px solid $oranje;
+      background-color: white;
+      color:$oranje;
+      @include transition(all 0.5s ease-in-out);
+    }
   }
   &.blauw-stip{
     color: $blauw;
     background: transparent;
     border: 1px dashed $blauw;
+    @include transition(all 0.5s ease-in-out);
+    &:hover {
+      border:1px solid $oranje;
+      background-color: $oranje;
+      color: white;
+      @include transition(all 0.5s ease-in-out);
+    }
   }
   &.blauw{
+    border:2px solid $blauw;
     background-color: $blauw;
     color: white;
+    @include transition(all 0.5s ease-in-out);
+    &:hover {
+      border:2px solid $oranje;
+      background-color: white;
+      color:$oranje;
+      @include transition(all 0.5s ease-in-out);
+    }
+  }
+  &:hover {
+    @include transition(all 0.5s ease-in-out);
+  }
+}
+
+#stipstap-footer {
+  .knop {
+    &:hover {
+      border:2px solid white;
+    }
   }
 }
 
@@ -241,6 +279,33 @@ html body #powerTip {
   background-color: $oranje;
   &.n:before{
     border-top-color: $oranje;
+  }
+}
+
+.juicer-feed {
+  float:left;
+  width:100%;
+  padding:30px 0;
+  h1 {
+    display:none !important;
+  }
+  li.feed-item {
+    &.juicer {
+      display:none !important;
+    }
+  }
+}
+
+.content-selector {
+  a {
+    font-family: "bree",sans-serif;
+    font-size:24px;
+    color:$blauw;
+    @include transition(all 0.5s ease-in-out);
+    &:hover {
+      color:$oranje;
+      @include transition(all 0.5s ease-in-out);
+    }
   }
 }
 

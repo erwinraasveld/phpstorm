@@ -174,7 +174,7 @@ module.exports = function(grunt)
 
 	// Define your tasks here
 	//grunt.registerTask('default', ['sass', 'jshint', 'browserify', 'exorcise', 'phplint', ]);
-	grunt.registerTask('default', ['sass', 'jshint', 'browserify', 'exorcise', ]);
+	grunt.registerTask('default', ['sass', 'browserify', 'exorcise', ]);
 
 
 

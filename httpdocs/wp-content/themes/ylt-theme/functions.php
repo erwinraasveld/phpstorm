@@ -114,3 +114,18 @@ function shortcode_field($atts){
     }
     return $output;
 }
+
+
+
+
+add_filter( 'wpcf7_mail_tag_replaced','replace_tag_rich_text_editor',10,3);
+/* Prevent replacing HTML tags */
+function replace_tag_rich_text_editor($replaced, $submitted, $html){
+
+	if($html && !is_array($submitted)){
+
+
+		$replaced = $submitted;
+	}
+	return $replaced;
+}

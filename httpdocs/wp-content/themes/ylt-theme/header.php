@@ -16,6 +16,8 @@
 
 <body <?php body_class(); ?>>
 
+<div canvas="container">
+
 <nav class="container">
 
 
@@ -27,7 +29,8 @@
                 printf('<a href="%s">%s</a>',HOME_URL,file_get_contents(TEMPLATE_DIR.'/assets/img/logo.svg'));
                 ?>
             </div>
-            <div class="hoofdmenu">
+            <div class="hoofdmenu pull-right">
+                <span class="hidden-xs">
 	            <?php
 	            $args = array
 	            (
@@ -38,7 +41,12 @@
 	            wp_nav_menu($args);
 
 	            ?>
+                </span>
+                <span class="visible-xs">
+                    <button class="js-open-right-slidebar knop klein oranje">MENU</button>
+                </span>
             </div>
+
         </div>
     </nav>
 </nav>

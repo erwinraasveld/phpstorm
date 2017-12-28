@@ -5,8 +5,20 @@ nav{
     left: 0;
     top: 38px ;
     z-index: 1;
+    @include transition(all 0.5s ease-in-out);
     @media(min-width: 1510px){
       transform:translateX(-100%);
+    }
+    svg {
+      position:relative;
+      @include transition(all 0.5s ease-in-out);
+    }
+    &:hover {
+      @include transition(all 0.5s ease-in-out);
+      svg  {
+        @include transform-scale(1.2);
+        @include transition(all 0.5s ease-in-out);
+      }
     }
     a{
       float: left;
@@ -21,17 +33,17 @@ nav{
     @include flexbox;
     justify-content: flex-end;
     align-items: center;
-    > ul{
+    ul{
       margin: 0;
       padding: 0;
-      > li{
+      li{
         a{
           color: $text-color;
         }
         display: inline-block;
 
         &.current-menu-item{
-          > a{
+          a{
             color: $blauw;
           }
         }

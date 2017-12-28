@@ -10,6 +10,11 @@ $oranje: #e7570f;
   display: flex;
 }
 
+*:focus,
+:focus {
+  text-decoration: none !important;
+  outline:0 !important;;
+}
 
 h1{
   font-size: 60px;
@@ -45,6 +50,15 @@ b,strong{
         font-family: "ff-market-web",sans-serif;
         font-size: 24px;
         position: relative;
+      }
+    }
+    p{
+      font-family: "ff-market-web",sans-serif;
+      font-size: 24px;
+      &:before{
+        content:url("../img/oranje-check.svg");
+        vertical-align: middle;
+        margin-right: 5px;
       }
     }
   }
