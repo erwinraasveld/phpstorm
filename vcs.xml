@@ -10,6 +10,10 @@
           <option name="url" value="https://github.com/erwinraasveld/phpstorm.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://erwinraasveld@bitbucket.org/ylt-dev/mecona.nl.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="/Applications/MAMP/htdocs/stipstap/httpdocs" />
